@@ -1,14 +1,273 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorWeather"
     tools:context=".screens.WeatherFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ImageView
+        android:id="@+id/image_view_weather_fragment_main_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app_margin"
+        android:src="@drawable/n04x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/text_view_weather_fragment_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/app_margin"
+        android:textAllCaps="true"
+        android:textSize="@dimen/description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_weather_fragment_main_img"
+        tools:text="Cloudy" />
+
+    <TextView
+        android:id="@+id/text_view_weather_fragment_main_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/app_margin"
+        android:textSize="42sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_weather_fragment_description"
+        tools:text="36 C" />
+
+    <TextView
+        android:id="@+id/text_view_weather_fragment_humidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textSize="@dimen/description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_weather_fragment_main_temperature"
+        tools:text="74 %" />
+
+    <ImageView
+        android:id="@+id/image_view_weather_fragment_humidity_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_humidity"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_weather_fragment_humidity"
+        app:layout_constraintEnd_toStartOf="@+id/text_view_weather_fragment_humidity"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view_weather_fragment_pressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/description"
+        app:layout_constraintBottom_toBottomOf="@+id/image_view_weather_fragment_humidity_icon"
+        app:layout_constraintEnd_toStartOf="@+id/image_view_weather_fragment_humidity_icon"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="1000 hpa" />
+
+    <ImageView
+        android:id="@+id/image_view_weather_fragment_pressure_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_pressure"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_weather_fragment_pressure"
+        app:layout_constraintEnd_toStartOf="@+id/text_view_weather_fragment_pressure"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_view_weather_fragment_wind_speed_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_wind"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_weather_fragment_humidity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toEndOf="@+id/text_view_weather_fragment_humidity" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/image_view_weather_fragment_wind_speed_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/image_view_weather_fragment_wind_speed_icon"
+        tools:text="7 m/s" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/app_margin"
+        android:textSize="@dimen/description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_weather_fragment_humidity"
+        tools:text="Next 5 Days" />
+
+    <View
+        android:id="@+id/view_weather_fragment_line"
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_margin="@dimen/app_margin"
+        android:background="@color/colorWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+    <TextView
+        android:id="@+id/text_view_weather_fragment_third_day_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/app_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_weather_fragment_line"
+        tools:text="MON" />
+
+    <ImageView
+        android:id="@+id/image_view_weather_fragment_third_day_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/s04"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_weather_fragment_third_day_name" />
+
+    <TextView
+        android:id="@+id/text_view_weather_fragment_third_day_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_weather_fragment_third_day_icon"
+        tools:text="29 C" />
+
+
+    <TextView
+        android:id="@+id/text_view_weather_fragment_fourth_day_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_weather_fragment_third_day_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toEndOf="@+id/text_view_weather_fragment_third_day_name"
+        tools:text="TUE" />
+
+    <ImageView
+        android:id="@+id/image_view_weather_fragment_forth_day_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/s04"
+        app:layout_constraintBottom_toBottomOf="@+id/image_view_weather_fragment_third_day_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toEndOf="@+id/image_view_weather_fragment_third_day_icon" />
+
+    <TextView
+        android:id="@+id/text_view_weather_fragment_fourth_day_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toEndOf="@+id/text_view_weather_fragment_third_day_temperature"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_weather_fragment_forth_day_icon"
+        tools:text="31 C" />
+
+    <TextView
+        android:id="@+id/text_view_weather_fragment_fifth_day_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_weather_fragment_fourth_day_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_view_weather_fragment_fourth_day_name"
+        tools:text="WED" />
+
+    <ImageView
+        android:id="@+id/image_view_weather_fragment_fifth_day_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/s04"
+        app:layout_constraintBottom_toBottomOf="@+id/image_view_weather_fragment_forth_day_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.40"
+        app:layout_constraintStart_toEndOf="@+id/image_view_weather_fragment_forth_day_icon" />
+
+    <TextView
+        android:id="@+id/text_view_weather_fragment_fifth_day_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_weather_fragment_fourth_day_temperature"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_view_weather_fragment_fourth_day_temperature"
+        tools:text="27 C" />
+
+    <TextView
+        android:id="@+id/text_view_weather_fragment_second_day_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_weather_fragment_third_day_name"
+        app:layout_constraintEnd_toStartOf="@+id/text_view_weather_fragment_third_day_name"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="SUN" />
+
+    <ImageView
+        android:id="@+id/image_view_weather_fragment_second_day_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/s04"
+        app:layout_constraintBottom_toBottomOf="@+id/image_view_weather_fragment_third_day_icon"
+        app:layout_constraintEnd_toStartOf="@+id/image_view_weather_fragment_third_day_icon"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view_weather_fragment_second_day_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_weather_fragment_third_day_temperature"
+        app:layout_constraintEnd_toStartOf="@+id/text_view_weather_fragment_third_day_temperature"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="24 C" />
+
+    <TextView
+        android:id="@+id/text_view_weather_fragment_first_day_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_weather_fragment_second_day_icon"
+        app:layout_constraintEnd_toStartOf="@+id/text_view_weather_fragment_second_day_name"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="SAT" />
+
+    <ImageView
+        android:id="@+id/image_view_weather_fragment_first_day_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/s04"
+        app:layout_constraintBottom_toBottomOf="@+id/image_view_weather_fragment_second_day_icon"
+        app:layout_constraintEnd_toStartOf="@+id/image_view_weather_fragment_second_day_icon"
+        app:layout_constraintHorizontal_bias="0.60"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view_weather_fragment_first_day_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_weather_fragment_second_day_temperature"
+        app:layout_constraintEnd_toStartOf="@+id/text_view_weather_fragment_second_day_temperature"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="17 C" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
