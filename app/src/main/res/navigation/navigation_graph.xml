@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/cityFragment"
-        android:name="kz.meteo.kazmeteo.screens.CityFragment"
+        android:name="kz.meteo.kazmeteo.screens.city.CityFragment"
         android:label="fragment_city"
         tools:layout="@layout/fragment_city" >
         <action
